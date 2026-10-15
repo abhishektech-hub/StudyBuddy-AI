@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StudyBuddy AI — Learn, ask, grow</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><div class="brand-mark">✳</div><div><strong>StudyBuddy</strong><small>AI learning companion</small></div></div>
+    <button class="new-chat" id="newChat"><span>＋</span> New conversation</button>
+    <div class="nav-label">YOUR SPACE</div>
+    <nav id="categoryNav">
+      <button class="nav-item active" data-category="Study"><span class="nav-icon">🎓</span> Study <span class="nav-arrow">›</span></button>
+      <button class="nav-item" data-category="Health"><span class="nav-icon">🩺</span> Health</button>
+      <button class="nav-item" data-category="Fitness"><span class="nav-icon">💪</span> Fitness</button>
+      <button class="nav-item" data-category="Fashion"><span class="nav-icon">👕</span> Fashion</button>
+      <button class="nav-item" data-category="History"><span class="nav-icon">🏛️</span> History</button>
+      <button class="nav-item" data-category="Coding"><span class="nav-icon">💻</span> Coding <span class="code-pill">DEV</span></button>
+    </nav>
+    <div class="history-heading"><span class="nav-label">RECENT HISTORY</span><button id="clearHistory" title="Clear history">⌫</button></div>
+    <div class="history-list" id="historyList"><p class="empty-history">Your chats will appear here.</p></div>
+    <div class="sidebar-bottom"><div class="avatar">S</div><div><strong>StudyBuddy AI</strong><small id="modeStatus">Demo mode · local server</small></div><span class="status-dot"></span></div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button><div class="crumb">Workspace <span>/</span> <strong id="currentCategory">Study</strong></div><div class="top-actions"><span class="privacy"><span class="green-dot"></span> Your learning space</span><button class="theme-toggle" id="themeToggle" title="Toggle theme">☼</button></div></header>
+    <section class="chat-area" id="chatArea">
+      <div class="welcome" id="welcome">
+        <div class="welcome-orbit"><span>✳</span><i></i><b></b></div>
+        <div class="eyebrow"><span class="sparkle">✦</span> YOUR EVERYDAY AI COMPANION</div>
+        <h1>Curiosity looks<br>good on <em>you.</em></h1>
+        <p class="welcome-sub">A little help with the big and small questions.<br>Pick a topic and let's figure it out together.</p>
+        <div class="topic-grid">
+          <button class="topic-card" data-category="Study"><span class="topic-emoji study-bg">🎓</span><span><strong>Study smarter</strong><small>Concepts, homework & revision</small></span><span class="card-arrow">↗</span></button>
+          <button class="topic-card" data-category="Health"><span class="topic-emoji health-bg">🩺</span><span><strong>Everyday health</strong><small>Understand wellness basics</small></span><span class="card-arrow">↗</span></button>
+          <button class="topic-card" data-category="Fitness"><span class="topic-emoji fitness-bg">💪</span><span><strong>Fitness & habits</strong><small>Workouts and healthy routines</small></span><span class="card-arrow">↗</span></button>
+          <button class="topic-card" data-category="Fashion"><span class="topic-emoji fashion-bg">👕</span><span><strong>Find your style</strong><small>Outfits, colours & occasions</small></span><span class="card-arrow">↗</span></button>
+          <button class="topic-card" data-category="History"><span class="topic-emoji history-bg">🏛️</span><span><strong>Explore history</strong><small>People, events & timelines</small></span><span class="card-arrow">↗</span></button>
+          <button class="topic-card" data-category="Coding"><span class="topic-emoji coding-bg">⌘</span><span><strong>Build with code</strong><small>Programming, bugs & projects</small></span><span class="card-arrow">↗</span></button>
+        </div>
+        <div class="suggestion-label">NOT SURE WHERE TO START?</div>
+        <div class="suggestions"><button data-prompt="Explain a difficult topic in simple language">Explain a topic <span>↗</span></button><button data-prompt="Make me a simple study plan for today">Plan my study day <span>↗</span></button><button data-prompt="Teach me one useful coding concept">Learn a coding concept <span>↗</span></button></div>
+      </div>
+      <div class="messages" id="messages" hidden></div>
+    </section>
+    <footer class="composer-wrap">
+      <div class="composer">
+        <textarea id="messageInput" rows="1" placeholder="Ask anything… (e.g. explain recursion simply)" aria-label="Your question"></textarea>
+        <div class="composer-bottom"><div class="composer-hint"><span class="plus-hint">＋</span><span id="inputCategory">Study mode</span><span class="hint-separator">·</span><span>Simple answers, no silly questions</span></div><button id="sendBtn" class="send-btn" aria-label="Send message">↑</button></div>
+      </div>
+      <div class="disclaimer">StudyBuddy can make mistakes. Health answers are for general education, not a medical diagnosis.</div>
+    </footer>
+  </main>
+</div>
+<script src="/app.js"></script>
+</body></html>
